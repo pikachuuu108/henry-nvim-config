@@ -146,6 +146,16 @@ command! BlackUpgrade :call black#BlackUpgrade()
 command! BlackVersion :call black#BlackVersion()
 
 
+" NERDTree
+augroup Group2
+	autocmd!
+	" NERDTree setting
+	autocmd VimEnter * NERDTree | wincmd p
+	" close VIM automatically when NERDTree is the last window
+	autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |  quit | endif
+	"autocmd FileType python let g:autoformatpython_enabled = 1
+augroup END
+
 "nnoremap <F2> :Black<cr>
 "nnoremap ff :!black %<cr>
 

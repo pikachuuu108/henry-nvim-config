@@ -44,7 +44,7 @@ require("impatient")
 require("configs.autocomplete").config()
 --require("configs.nvim-cmp").config()
 require("configs.statusline").config()
-require("configs.filetree").config()
+--require("configs.filetree").config()
 require("configs.treesitter").config()
 require("configs.outlinetree").config()
 require("configs.startscreen").config()
@@ -56,3 +56,7 @@ require("nvim-lsp-installer").setup {}
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.gopls.setup{}
 require'nvim-autopairs'.setup{}
+
+vim.api.nvim_set_keymap('n', '<c-P>',
+    "<cmd>lua require('fzf-lua').files()<CR>",
+    { noremap = true, silent = true })

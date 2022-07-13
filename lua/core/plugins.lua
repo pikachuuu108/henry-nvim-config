@@ -97,4 +97,11 @@ return require('packer').startup(function()
 
 	use 'scrooloose/nerdcommenter'
 
+	use 'junegunn/fzf.vim'
+	use 'junegunn/fzf'
+	use { 'ibhagwan/fzf-lua',
+  -- optional for icon support
+	  requires = { 'kyazdani42/nvim-web-devicons' }
+	}
+
 end)

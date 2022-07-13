@@ -20,10 +20,12 @@ vim.keymap.set('n', '<C-H>', '<C-W><C-H>')
 
 -- keymaps
 -- f: file tree
-vim.keymap.set('n', '<F3>', ':NvimTreeToggle<cr>')
-vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<cr>')
-vim.keymap.set('n', '<leader>ft', ':NvimTreeFindFile<cr>')
-vim.keymap.set('n', '<leader>ff', ':NvimTreeFocus<cr>')
+vim.keymap.set('n', '<F3>', ':NERDTreeToggle<cr>')
+vim.keymap.set('n', '<C-n>', ':NERDTreeToggle<cr>')
+--vim.keymap.set('n', '<F3>', ':NvimTreeToggle<cr>')
+--vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<cr>')
+--vim.keymap.set('n', '<leader>ft', ':NvimTreeFindFile<cr>')
+--vim.keymap.set('n', '<leader>ff', ':NvimTreeFocus<cr>')
 -- y: telescope
 vim.keymap.set('n', '<F9>', function() require'telescope.builtin'.find_files{} end)
 vim.keymap.set('n', '<F10>', function() require'telescope.builtin'.git_files{} end)
