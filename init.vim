@@ -156,8 +156,7 @@ augroup Group2
 	"autocmd FileType python let g:autoformatpython_enabled = 1
 augroup END
 
-"nnoremap <F2> :Black<cr>
-"nnoremap ff :!black %<cr>
+nnoremap ff :Black<cr>
 
 "nmap [b :bp<cr>
 "nmap ]b :bn<cr>
