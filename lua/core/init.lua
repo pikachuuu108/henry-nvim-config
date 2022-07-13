@@ -42,12 +42,17 @@ require("core.theme")
 require("impatient")
 
 require("configs.autocomplete").config()
+--require("configs.nvim-cmp").config()
 require("configs.statusline").config()
 require("configs.filetree").config()
 require("configs.treesitter").config()
 require("configs.outlinetree").config()
 require("configs.startscreen").config()
-require("configs.git").config()
+--require("configs.git").config()
 require("configs.bufferline").config()
 require("configs.grammar").config()
+require("nvim-lsp-installer").setup {}
 
+require'lspconfig'.pyright.setup{}
+require'lspconfig'.gopls.setup{}
+require'nvim-autopairs'.setup{}

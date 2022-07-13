@@ -1,9 +1,28 @@
-vim.g.mapleader = ';'
+--vim.g.mapleader = '\<space>'
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+
+vim.keymap.set('n', '<leader><ESC>', ':noh<cr>')
+
+vim.keymap.set('n', 'j', 'gj')
+vim.keymap.set('n', 'gj', 'j')
+vim.keymap.set('n', 'k', 'gk')
+vim.keymap.set('n', 'gk', 'k')
+
+-- black
+vim.keymap.set('n', 'ff', 'Black<cr>')
+
+vim.keymap.set('n', '<C-J>', '<C-W><C-J>')
+vim.keymap.set('n', '<C-K>', '<C-W><C-K>')
+vim.keymap.set('n', '<C-L>', '<C-W><C-L>')
+vim.keymap.set('n', '<C-H>', '<C-W><C-H>')
 
 -- keymaps
 -- f: file tree
 vim.keymap.set('n', '<F3>', ':NvimTreeToggle<cr>')
-vim.keymap.set('n', '<leader>ft', ':NvimTreeToggle<cr>')
+vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<cr>')
+vim.keymap.set('n', '<leader>ft', ':NvimTreeFindFile<cr>')
 vim.keymap.set('n', '<leader>ff', ':NvimTreeFocus<cr>')
 -- y: telescope
 vim.keymap.set('n', '<F9>', function() require'telescope.builtin'.find_files{} end)
@@ -35,7 +54,10 @@ vim.keymap.set('n', '<m-=>', '<c-w>+')
 -- b: buffer
 vim.keymap.set('n', '<leader>bn', ':bn<cr>')
 vim.keymap.set('n', '<leader>bp', ':bp<cr>')
-vim.keymap.set('n', '<leader>bd', ':Bdelete<cr>')
+vim.keymap.set('n', '<leader>d', ':Bdelete<cr>')
+--vim.keymap.set('n', '<leader>d', '::bprevious<CR>:bdelete #<CR>')
+vim.keymap.set('n', '[b', ':bp<cr>')
+vim.keymap.set('n', ']b', ':bn<cr>')
 -- p: plugins
 vim.keymap.set('n', '<leader>pi', ':PackerInstall<cr>')
 vim.keymap.set('n', '<leader>pc', ':PackerClean<cr>')
