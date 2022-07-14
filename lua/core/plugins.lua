@@ -34,17 +34,30 @@ return require('packer').startup(function()
 	-- language
 	use "williamboman/nvim-lsp-installer"
 	use 'neovim/nvim-lspconfig'
+
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-path'
 	use 'hrsh7th/cmp-cmdline'
 	use 'hrsh7th/nvim-cmp'
+
 	use 'hrsh7th/cmp-vsnip'
 	use 'hrsh7th/vim-vsnip'
+
+	use 'saadparwaiz1/cmp_luasnip'
 	use 'L3MON4D3/LuaSnip'
+
+	--use 'SirVer/ultisnips'
+	--use 'quangnguyen30192/cmp-nvim-ultisnips'
+
+	use 'dcampos/cmp-snippy'
+	use 'dcampos/nvim-snippy'
+
 	use 'nvim-treesitter/nvim-treesitter'
 	use 'onsails/lspkind-nvim'
 	use 'rafamadriz/friendly-snippets'
+
+	use 'ray-x/lsp_signature.nvim'
 
 	-- git
 	use {
@@ -88,6 +101,7 @@ return require('packer').startup(function()
 		--'neoclide/coc.nvim',
 		--branch = 'release'
 	--}
+	
 
 	use {
 		'preservim/nerdtree', 
