@@ -52,10 +52,11 @@ require("configs.outlinetree").config()
 --require("configs.startscreen").config()
 require("configs.bufferline").config()
 require("configs.grammar").config()
-require("nvim-lsp-installer").setup {}
+require("nvim-lsp-installer").setup{}
 
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.gopls.setup{}
+require'lspconfig'.bashls.setup{}
 require'nvim-autopairs'.setup{}
 
 vim.api.nvim_set_keymap('n', '<c-P>',
