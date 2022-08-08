@@ -111,6 +111,8 @@ return require('packer').startup(function()
 	
 	use 'windwp/nvim-autopairs'
 
+    use 'luochen1990/rainbow'
+
 	use 'scrooloose/nerdcommenter'
 
 	use 'junegunn/fzf.vim'
@@ -119,5 +121,7 @@ return require('packer').startup(function()
   -- optional for icon support
 	  requires = { 'kyazdani42/nvim-web-devicons' }
 	}
+
+    use 'norcalli/nvim-colorizer.lua'
 
 end)
