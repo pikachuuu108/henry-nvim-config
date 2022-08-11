@@ -109,6 +109,8 @@ return require('packer').startup(function()
 		'preservim/nerdtree', 
 	}
 	
+	use 'preservim/tagbar' 
+
 	use 'windwp/nvim-autopairs'
 
     use 'luochen1990/rainbow'

@@ -230,6 +230,9 @@ function! ShowDocumentation()
   endif
 endfunction
 
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
