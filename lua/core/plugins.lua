@@ -94,7 +94,7 @@ return require('packer').startup(function()
 
 	-- black python formatter
 	use {
-		'psf/black'
+		'psf/black',
 	}
 
 	--use {
