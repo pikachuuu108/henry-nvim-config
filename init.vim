@@ -79,6 +79,7 @@ func! CompileRunGcc()
 		"exec "!clear"
 		"exec "!time python3 %"
 		exec "!/Users/henry/anaconda3/envs/tf/bin/python %"
+		" exec "!/Users/henry.luohr/opt/anaconda3/envs/tf1.15/bin/python %"
 	elseif &filetype == 'html'
 		exec "!firefox % &"
 	elseif &filetype == 'go'
