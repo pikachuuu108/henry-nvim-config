@@ -26,6 +26,8 @@ vim.keymap.set('n', '<C-n>', ':NERDTreeToggle<cr>')
 --vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<cr>')
 --vim.keymap.set('n', '<leader>ft', ':NvimTreeFindFile<cr>')
 --vim.keymap.set('n', '<leader>ff', ':NvimTreeFocus<cr>')
+--
+vim.keymap.set("n", '<F8>', ':TagbarToggle<CR>')
 -- y: telescope
 vim.keymap.set('n', '<F9>', function() require'telescope.builtin'.find_files{} end)
 vim.keymap.set('n', '<F10>', function() require'telescope.builtin'.git_files{} end)
