@@ -53,6 +53,7 @@ require("configs.outlinetree").config()
 --require("configs.startscreen").config()
 require("configs.bufferline").config()
 require("configs.grammar").config()
+--require("configs.coc-nvim").config()
 require("nvim-lsp-installer").setup{}
 
 require'lspconfig'.pyright.setup{}
@@ -71,6 +72,7 @@ require'colorizer'.setup{
         mode = 'foreground'
     }
 }
+--require("configs.coc-nvim").config()
 
 vim.cmd[[augroup rainbow]]
 vim.cmd[[	au BufEnter *     hi      TSPunctBracket NONE]]
@@ -78,3 +80,4 @@ vim.cmd[[	au BufEnter *     hi link TSPunctBracket nonexistenthl]]
 vim.cmd[[	au BufEnter *.lua hi      TSConstructor  NONE]]
 vim.cmd[[	au BufEnter *.lua hi link TSConstructor  nonexistenthl]]
 vim.cmd[[augroup END]]
+
