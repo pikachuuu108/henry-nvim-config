@@ -3,6 +3,8 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
 
+    use {'neoclide/coc.nvim', branch = 'release'}
+
 	-- starup time optimise
 	use 'dstein64/vim-startuptime'
 	use 'lewis6991/impatient.nvim'
