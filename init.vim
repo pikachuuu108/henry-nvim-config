@@ -68,7 +68,9 @@ func! CompileRunGcc()
 		exec "!g++ % -o %<"
 		exec "!time ./%<"
 	elseif &filetype == 'cpp'
-		exec "!g++ % -o %<"
+		"exec "!g++ % -o %<"
+        "exec "!clang % -o %<"
+        exec "!g++ -std=c++17 -g % -o %:r && ./%:r"
 		exec "!time ./%<"
 	elseif &filetype == 'java'
 		exec "!javac %"
