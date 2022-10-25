@@ -301,7 +301,7 @@ _G.packer_plugins = {
   },
   ["vim-fugitive"] = {
     loaded = true,
-    path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    path = "/Users/henry/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-go"] = {
