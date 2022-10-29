@@ -319,6 +319,11 @@ _G.packer_plugins = {
     path = "/Users/henry/.local/share/nvim/site/pack/packer/start/vim-grammarous",
     url = "https://github.com/rhysd/vim-grammarous"
   },
+  ["vim-nerdtree-syntax-highlight"] = {
+    loaded = true,
+    path = "/Users/henry/.local/share/nvim/site/pack/packer/start/vim-nerdtree-syntax-highlight",
+    url = "https://github.com/johnstef99/vim-nerdtree-syntax-highlight"
+  },
   ["vim-startuptime"] = {
     loaded = true,
     path = "/Users/henry/.local/share/nvim/site/pack/packer/start/vim-startuptime",
