@@ -130,4 +130,6 @@ return require('packer').startup(function()
 
     use 'norcalli/nvim-colorizer.lua'
 
+    use 'ryanoasis/vim-devicons'
+
 end)

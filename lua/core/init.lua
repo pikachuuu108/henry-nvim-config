@@ -38,6 +38,8 @@ vim.g.loaded_tutor_mode_plugin = 1
 vim.g.loaded_remote_plugins    = 1
 require("core.theme")
 
+vim.g.webdevicons_enable = 1
+
 -- Load plugin configs
 -- plugins without extra configs are configured directly here
 require("impatient")
