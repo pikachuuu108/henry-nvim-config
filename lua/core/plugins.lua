@@ -95,9 +95,10 @@ return require('packer').startup(function()
 	use 'rhysd/vim-grammarous'
 
 	-- black python formatter
-	use {
-		'psf/black',
-	}
+    use {
+        'psf/black',
+        branch = 'stable',
+    }
 
 	--use {
 		--'neoclide/coc.nvim',

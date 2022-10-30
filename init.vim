@@ -111,7 +111,7 @@ endif
 let g:load_black = "py1.0"
 if !exists("g:black_virtualenv")
   if has("nvim")
-	let g:black_virtualenv = "~/.vim/black"
+	let g:black_virtualenv = "/Users/henry/anaconda3/envs/black" 
   else
 	let g:black_virtualenv = "~/.vim/black"
   endif
