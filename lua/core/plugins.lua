@@ -100,11 +100,6 @@ return require('packer').startup(function()
         branch = 'stable',
     }
 
-	--use {
-		--'neoclide/coc.nvim',
-		--branch = 'release'
-	--}
-	--
 	use 'fatih/vim-go'
 	
 
