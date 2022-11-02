@@ -34,7 +34,8 @@ return require('packer').startup(function()
 	}
 
 	-- language
-	use "williamboman/nvim-lsp-installer"
+    use "williamboman/nvim-lsp-installer"
+	use "williamboman/mason.nvim"
 	use 'neovim/nvim-lspconfig'
 
 	use 'hrsh7th/cmp-nvim-lsp'
@@ -42,6 +43,13 @@ return require('packer').startup(function()
 	use 'hrsh7th/cmp-path'
 	use 'hrsh7th/cmp-cmdline'
 	use 'hrsh7th/nvim-cmp'
+    use({
+        "jose-elias-alvarez/null-ls.nvim",
+        config = function()
+            require("null-ls").setup()
+        end,
+        requires = { "nvim-lua/plenary.nvim" },
+    })
 
 	use 'hrsh7th/cmp-vsnip'
 	use 'hrsh7th/vim-vsnip'

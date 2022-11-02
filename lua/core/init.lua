@@ -56,7 +56,30 @@ require("configs.outlinetree").config()
 require("configs.bufferline").config()
 require("configs.grammar").config()
 --require("configs.coc-nvim").config()
-require("nvim-lsp-installer").setup{}
+--require("nvim-lsp-installer").setup{}
+require("mason").setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
+})
+
+require("null-ls").setup({
+    sources = {
+        --require("null-ls").builtins.formatting.stylua,
+        --require("null-ls").builtins.diagnostics.eslint,
+        require("null-ls").builtins.formatting.json_tool,
+        require("null-ls").builtins.formatting.black,
+        require("null-ls").builtins.formatting.clang_format,
+        require("null-ls").builtins.formatting.beautysh,
+        require("null-ls").builtins.formatting.gofmt,
+        require("null-ls").builtins.formatting.lua_format,
+        require("null-ls").builtins.formatting.markdownlint,
+    },
+})
 
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.gopls.setup{}
