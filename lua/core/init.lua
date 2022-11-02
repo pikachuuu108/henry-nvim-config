@@ -56,7 +56,7 @@ require("configs.outlinetree").config()
 require("configs.bufferline").config()
 require("configs.grammar").config()
 --require("configs.coc-nvim").config()
---require("nvim-lsp-installer").setup{}
+require("nvim-lsp-installer").setup{}
 require("mason").setup({
     ui = {
         icons = {
@@ -84,6 +84,8 @@ require("null-ls").setup({
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.gopls.setup{}
 require'lspconfig'.bashls.setup{}
+require'lspconfig'.jsonls.setup{}
+require'lspconfig'.yamlls.setup{}
 require'nvim-autopairs'.setup{}
 
 vim.api.nvim_set_keymap('n', '<c-P>',
