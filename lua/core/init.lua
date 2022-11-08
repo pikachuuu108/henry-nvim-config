@@ -41,8 +41,9 @@ require("core.theme")
 --vim.g.webdevicons_enable = 1
 
 -- Load plugin configs
--- plugins without extra configs are configured directly here
 require("impatient")
+
+require'nvim-autopairs'.setup{}
 
 --require("configs.autocomplete").config()
 --require("configs.nvim-cmp").config()
@@ -55,13 +56,12 @@ require("configs.outlinetree").config()
 --require("configs.startscreen").config()
 require("configs.bufferline").config()
 require("configs.grammar").config()
---require("configs.coc-nvim").config()
+require("configs.coc-nvim").config()
 require("nvim-lsp-installer").setup{}
 
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.gopls.setup{}
 require'lspconfig'.bashls.setup{}
-require'nvim-autopairs'.setup{}
 
 vim.api.nvim_set_keymap('n', '<c-P>',
     "<cmd>lua require('fzf-lua').files()<CR>",

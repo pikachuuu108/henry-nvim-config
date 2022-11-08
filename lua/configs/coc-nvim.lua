@@ -16,7 +16,7 @@ function M.config()
     -- Auto complete
     function _G.check_back_space()
         local col = vim.fn.col('.') - 1
-        return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s')
+        return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
     end
 
     -- Use tab for trigger completion with characters ahead and navigate.
@@ -30,7 +30,7 @@ function M.config()
 
     -- Make <CR> to accept selected completion item or notify coc.nvim to format
     -- <C-g>u breaks current undo, please make your own choice.
-    keyset("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
+    keyset("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
 
     -- Use <c-j> to trigger snippets
     keyset("i", "<c-j>", "<Plug>(coc-snippets-expand-jump)")
@@ -70,6 +70,10 @@ function M.config()
         command = "silent call CocActionAsync('highlight')",
         desc = "Highlight symbol under cursor on CursorHold"
     })
+
+
+    -- Symbol renaming.
+    keyset("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
 
 
     -- Formatting selected code.
