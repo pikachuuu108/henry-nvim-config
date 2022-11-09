@@ -16,7 +16,7 @@ function M.config()
     -- Auto complete
     function _G.check_back_space()
         local col = vim.fn.col('.') - 1
-        return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s')
+        return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
     end
 
     -- Use tab for trigger completion with characters ahead and navigate.
@@ -70,6 +70,10 @@ function M.config()
         command = "silent call CocActionAsync('highlight')",
         desc = "Highlight symbol under cursor on CursorHold"
     })
+
+
+    -- Symbol renaming.
+    keyset("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
 
 
     -- Formatting selected code.

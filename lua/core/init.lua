@@ -43,6 +43,7 @@ require("core.theme")
 -- Load plugin configs
 -- plugins without extra configs are configured directly here
 require("impatient")
+require'nvim-autopairs'.setup{}
 
 --require("configs.autocomplete").config()
 --require("configs.nvim-cmp").config()
@@ -55,7 +56,7 @@ require("configs.outlinetree").config()
 --require("configs.startscreen").config()
 require("configs.bufferline").config()
 require("configs.grammar").config()
---require("configs.coc-nvim").config()
+require("configs.coc-nvim").config()
 require("nvim-lsp-installer").setup{}
 require("mason").setup({
     ui = {
@@ -86,7 +87,6 @@ require'lspconfig'.gopls.setup{}
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.jsonls.setup{}
 require'lspconfig'.yamlls.setup{}
-require'nvim-autopairs'.setup{}
 
 vim.api.nvim_set_keymap('n', '<c-P>',
     "<cmd>lua require('fzf-lua').files()<CR>",
