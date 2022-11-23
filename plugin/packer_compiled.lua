@@ -310,6 +310,11 @@ _G.packer_plugins = {
     path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/start/vim-devicons",
     url = "https://github.com/ryanoasis/vim-devicons"
   },
+  ["vim-easymotion"] = {
+    loaded = true,
+    path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/start/vim-easymotion",
+    url = "https://github.com/easymotion/vim-easymotion"
+  },
   ["vim-floaterm"] = {
     loaded = true,
     path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/start/vim-floaterm",

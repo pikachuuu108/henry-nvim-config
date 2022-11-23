@@ -109,3 +109,7 @@ vim.keymap.set('n', '<leader>hb', ':Gitsigns blame_line<cr>')
 vim.keymap.set('n', '<leader>hd', ':Gitsigns diffthis<cr>')
 vim.keymap.set('n', '<leader>hs', ':<C-U>Gitsigns select_hunk<CR>')
 
+
+-- easymotion
+vim.keymap.set('n', 't', '<Plug>(easymotion-f)')
+vim.keymap.set('n', 'T', '<Plug>(easymotion-F)')

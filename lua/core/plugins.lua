@@ -137,4 +137,6 @@ return require('packer').startup(function()
     use 'ryanoasis/vim-devicons'
     use 'johnstef99/vim-nerdtree-syntax-highlight'
 
+    use 'easymotion/vim-easymotion'
+
 end)
