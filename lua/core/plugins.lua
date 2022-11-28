@@ -132,6 +132,8 @@ return require('packer').startup(function()
 
     use 'tpope/vim-fugitive'
 
+    use 'zivyangll/git-blame.vim'
+
     use 'norcalli/nvim-colorizer.lua'
 
     use 'ryanoasis/vim-devicons'

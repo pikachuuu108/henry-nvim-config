@@ -159,6 +159,11 @@ _G.packer_plugins = {
     path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
+  ["git-blame.vim"] = {
+    loaded = true,
+    path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/start/git-blame.vim",
+    url = "https://github.com/zivyangll/git-blame.vim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
