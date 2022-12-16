@@ -346,6 +346,7 @@ nnoremap ff :Black<cr>
 "autocmd filetype nerdtree syn match go_icon ## containedin=NERDTreeFlags
 
 let g:NERDTreeLimitedSyntax = 1
+let g:NERDTreeFileExtensionHighlightFullName = 1
 
 
 " ================================= rainbow ================================

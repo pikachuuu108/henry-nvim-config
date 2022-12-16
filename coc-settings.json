@@ -13,5 +13,5 @@
     },
     "suggest.noselect": true,
     "hover.target": "float",
-    "python.pythonPath": "/Users/henry.luohr/opt/anaconda3/envs/tf1.15/bin/python"
+    "python.pythonPath": "/Users/henry.luohr/opt/anaconda3/envs/tf1.15/bin/python",
 }

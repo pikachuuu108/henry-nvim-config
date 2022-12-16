@@ -113,6 +113,8 @@ vim.keymap.set('n', '<leader>hs', ':<C-U>Gitsigns select_hunk<CR>')
 -- easymotion
 vim.keymap.set('n', 't', '<Plug>(easymotion-f)')
 vim.keymap.set('n', 'T', '<Plug>(easymotion-F)')
+vim.keymap.set('v', 't', '<Plug>(easymotion-f)')
+vim.keymap.set('v', 'T', '<Plug>(easymotion-F)')
 
 -- git-blame
 vim.keymap.set('n', '<leader>b', ':call gitblame#echo()<CR>')
