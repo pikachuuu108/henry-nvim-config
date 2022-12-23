@@ -135,4 +135,7 @@ return require('packer').startup(function()
     use 'johnstef99/vim-nerdtree-syntax-highlight'
 
     use 'easymotion/vim-easymotion'
+
+
+    use 'airblade/vim-gitgutter'
 end)
