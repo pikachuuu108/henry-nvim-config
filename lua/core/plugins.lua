@@ -141,4 +141,6 @@ return require('packer').startup(function()
 
     use 'easymotion/vim-easymotion'
 
+    use 'airblade/vim-gitgutter'
+
 end)

@@ -1,7 +1,8 @@
 lua require('core.init')
 "let $PYTHONPATH="/Users/henry/anaconda3/envs/tf/bin/python"
 
-set guifont=Source_Code_Pro_For_Powerline:h14
+"set guifont=Source_Code_Pro_For_Powerline:h14
+set guifont=MesloLGS\ NF:h15
 "set guifont=SFMono\ NERD\ Font:h13
 set clipboard^=unnamed,unnamedplus
 
@@ -383,3 +384,23 @@ let g:rainbow_active = 1
 "\}
 "
 "
+" ==================================== neovide ======================================
+if exists("g:neovide")
+    let g:neovide_scroll_animation_length = 1
+    let g:neovide_cursor_animation_length=0.05
+    let g:neovide_cursor_trail_size = 0.2
+
+    "  ---------- particle -----------
+    "let g:neovide_cursor_vfx_mode = "wireframe"
+    let g:neovide_cursor_vfx_mode = "pixiedust"
+    let g:neovide_cursor_vfx_particle_lifetime = 4
+    let g:neovide_cursor_vfx_particle_density = 10.0
+    let g:neovide_cursor_vfx_particle_speed = 10.0
+
+    " -------------- enable cmd V to paste ----------
+    let g:neovide_input_use_logo = 1
+    map <D-v> "+p<CR>
+    map! <D-v> <C-R>+
+    tmap <D-v> <C-R>+
+    vmap <D-c> "+y<CR> 
+endif
