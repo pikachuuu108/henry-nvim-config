@@ -113,7 +113,7 @@ function M.config()
 
 
     -- Run the Code Lens action on the current line.
-    keyset("n", "<leader>cl", "<Plug>(coc-codelens-action)", opts)
+    keyset("n", "<leader>cx", "<Plug>(coc-codelens-action)", opts)
 
 
     -- Map function and class text objects

@@ -399,6 +399,7 @@ if exists("g:neovide")
 
     " -------------- enable cmd V to paste ----------
     let g:neovide_input_use_logo = 1
+    let g:neovide_input_macos_alt_is_meta = v:true
     map <D-v> "+p<CR>
     map! <D-v> <C-R>+
     tmap <D-v> <C-R>+

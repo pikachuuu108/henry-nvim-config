@@ -99,6 +99,8 @@ require'colorizer'.setup{
         mode = 'foreground'
     }
 }
+
+require("configs.todo-comments").config()
 --require("configs.coc-nvim").config()
 
 vim.cmd[[augroup rainbow]]
