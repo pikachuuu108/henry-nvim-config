@@ -155,4 +155,6 @@ return require('packer').startup(function()
         end
     }
 
+    use 'kshenoy/vim-signature'
+
 end)

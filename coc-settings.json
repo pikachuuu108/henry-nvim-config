@@ -8,18 +8,21 @@
             "trace.server": "verbose",
             "filetypes": [
                 "go"
-            ],
+            ]
         }
     },
     "suggest.noselect": true,
     "hover.target": "float",
     "semanticTokens.enable": true,
+    "suggest.virtualText": true,
+    "diagnostic.virtualText": true,
     "python.pythonPath": "/Users/henry.luohr/opt/anaconda3/envs/tf1.15/bin/python",
     "go.goplsOptions": {
         "analyses": {
             "shadow": true,
             "printf": true,
-            "unreachable": true
+            "unreachable": true,
+            "undeclaredname": true
         },
         "semanticTokens": true
     }
