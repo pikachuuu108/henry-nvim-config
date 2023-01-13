@@ -83,4 +83,8 @@ vim.cmd[[	au BufEnter *.lua hi      TSConstructor  NONE]]
 vim.cmd[[	au BufEnter *.lua hi link TSConstructor  nonexistenthl]]
 vim.cmd[[augroup END]]
 
-vim.g.gitgutter_preview_win_floating = 1
+-- gitgutter
+--vim.g.gitgutter_preview_win_floating = 1
+vim.g.gitgutter_highlight_lines = 1
+vim.g.gitgutter_highlight_lines = 1
+vim.g.gitgutter_highlight_linenrs = 1

@@ -2,7 +2,7 @@ lua require('core.init')
 "let $PYTHONPATH="/Users/henry/anaconda3/envs/tf/bin/python"
 
 "set guifont=SFMono\ NERD\ Font:h13
-set guifont=Monaco:h12
+set guifont=Monaco:h13
 set clipboard^=unnamed,unnamedplus
 
 if has('unix')
@@ -396,6 +396,7 @@ if exists("g:neovide")
 
     " -------------- enable cmd V to paste ----------
     let g:neovide_input_use_logo = 1
+    let g:neovide_input_macos_alt_is_meta = v:true
     map <D-v> "+p<CR>
     map! <D-v> <C-R>+
     tmap <D-v> <C-R>+
