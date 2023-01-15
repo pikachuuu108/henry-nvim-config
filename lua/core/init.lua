@@ -74,6 +74,7 @@ require'colorizer'.setup{
         mode = 'foreground'
     }
 }
+require("configs.todo-comments").config()
 --require("configs.coc-nvim").config()
 
 vim.cmd[[augroup rainbow]]
@@ -84,7 +85,6 @@ vim.cmd[[	au BufEnter *.lua hi link TSConstructor  nonexistenthl]]
 vim.cmd[[augroup END]]
 
 -- gitgutter
---vim.g.gitgutter_preview_win_floating = 1
-vim.g.gitgutter_highlight_lines = 1
+vim.g.gitgutter_preview_win_floating = 1
 vim.g.gitgutter_highlight_lines = 1
 vim.g.gitgutter_highlight_linenrs = 1
