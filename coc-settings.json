@@ -16,7 +16,20 @@
             }
         }
     },
-    "suggest.noselect": true
+    "suggest.noselect": true,
+    "hover.target": "float",
+    "semanticTokens.enable": true,
+    "suggest.virtualText": true,
+    "diagnostic.virtualText": true,
+    "go.goplsOptions": {
+        "analyses": {
+            "shadow": true,
+            "printf": true,
+            "unreachable": true,
+            "undeclaredname": true
+        },
+        "semanticTokens": true
+    }
 }
 
 
