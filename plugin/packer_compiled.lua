@@ -356,6 +356,16 @@ _G.packer_plugins = {
     path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/start/vim-nerdtree-syntax-highlight",
     url = "https://github.com/johnstef99/vim-nerdtree-syntax-highlight"
   },
+  ["vim-signature"] = {
+    loaded = true,
+    path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/start/vim-signature",
+    url = "https://github.com/kshenoy/vim-signature"
+  },
+  ["vim-snippets"] = {
+    loaded = true,
+    path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/start/vim-snippets",
+    url = "https://github.com/honza/vim-snippets"
+  },
   ["vim-startuptime"] = {
     loaded = true,
     path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/start/vim-startuptime",
