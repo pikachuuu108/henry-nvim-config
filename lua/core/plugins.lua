@@ -55,7 +55,7 @@ return require('packer').startup(function()
 	use 'hrsh7th/vim-vsnip'
 
 	use 'saadparwaiz1/cmp_luasnip'
-	use 'L3MON4D3/LuaSnip'
+	--use 'L3MON4D3/LuaSnip'
 
 	--use 'SirVer/ultisnips'
 	--use 'quangnguyen30192/cmp-nvim-ultisnips'
