@@ -345,6 +345,11 @@ _G.packer_plugins = {
     path = "/Users/henry/.local/share/nvim/site/pack/packer/start/vim-signature",
     url = "https://github.com/kshenoy/vim-signature"
   },
+  ["vim-snippets"] = {
+    loaded = true,
+    path = "/Users/henry/.local/share/nvim/site/pack/packer/start/vim-snippets",
+    url = "https://github.com/honza/vim-snippets"
+  },
   ["vim-startuptime"] = {
     loaded = true,
     path = "/Users/henry/.local/share/nvim/site/pack/packer/start/vim-startuptime",

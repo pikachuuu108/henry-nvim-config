@@ -152,4 +152,8 @@ return require('packer').startup(function()
     }
 
     use 'kshenoy/vim-signature'
+
+    use 'honza/vim-snippets'
+
+    --use 'Exafunction/codeium.vim'
 end)
