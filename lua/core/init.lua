@@ -50,6 +50,7 @@ require'nvim-autopairs'.setup{}
 --require("configs.cmp")
 --require("configs.git").config()
 --require("configs.filetree").config()
+--
 require("configs.statusline").config()
 require("configs.treesitter").config()
 require("configs.outlinetree").config()
