@@ -118,3 +118,7 @@ vim.keymap.set('v', 'T', '<Plug>(easymotion-F)')
 
 -- git-blame
 vim.keymap.set('n', '<leader>b', ':call gitblame#echo()<CR>')
+
+
+-- vim-easy-align
+vim.keymap.set('n', 'ga', '<Plug>(EasyAlign)')

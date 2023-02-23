@@ -111,6 +111,10 @@ function M.config()
     -- Apply AutoFix to problem on the current line.
     keyset("n", "<leader>qf", "<Plug>(coc-fix-current)", opts)
 
+    -- Remap keys for apply refactor code actions.
+    --keyset("n", "<leader>re", "<Plug>(coc-codeaction-refactor)", { silent = true })
+    --keyset("x", "<leader>r", "<Plug>(coc-codeaction-refactor-selected)", { silent = true })
+    --keyset("n", "<leader>r", "<Plug>(coc-codeaction-refactor-selected)", { silent = true })
 
     -- Run the Code Lens action on the current line.
     keyset("n", "<leader>cx", "<Plug>(coc-codelens-action)", opts)

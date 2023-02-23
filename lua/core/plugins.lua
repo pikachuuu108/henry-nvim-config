@@ -159,4 +159,6 @@ return require('packer').startup(function()
 
     use 'honza/vim-snippets'
 
+    use 'junegunn/vim-easy-align'
+
 end)
