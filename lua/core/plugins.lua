@@ -161,6 +161,8 @@ return require('packer').startup(function()
 
     use 'junegunn/vim-easy-align'
 
+    use 'nvim-treesitter/playground'
+
     --use({
     --"folke/noice.nvim",
     --config = function()
