@@ -29,7 +29,8 @@
             "undeclaredname": true
         },
         "semanticTokens": true
-    }
+    },
+    "snippets.ultisnips.pythonPrompt": false
 }
 
 
