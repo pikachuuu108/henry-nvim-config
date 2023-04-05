@@ -36,7 +36,7 @@ require('kanagawa').setup({
     dimInactive = false,        -- dim inactive window `:h hl-NormalNC`
     globalStatus = false,       -- adjust window separators highlight for laststatus=3
     colors = {},
-    overrides = {},
+    --overrides = {},
 })
 
 vim.cmd("colorscheme kanagawa")
