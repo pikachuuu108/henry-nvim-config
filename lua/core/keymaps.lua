@@ -113,3 +113,6 @@ vim.keymap.set('n', 't', '<Plug>(easymotion-f)')
 vim.keymap.set('n', 'T', '<Plug>(easymotion-F)')
 vim.keymap.set('v', 't', '<Plug>(easymotion-f)')
 vim.keymap.set('v', 'T', '<Plug>(easymotion-F)')
+
+-- vim-easy-align
+vim.keymap.set('n', 'ga', '<Plug>(EasyAlign)')
