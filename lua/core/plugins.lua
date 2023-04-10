@@ -163,6 +163,11 @@ return require('packer').startup(function()
 
     use 'nvim-treesitter/playground'
 
+    use {
+        'python-rope/ropevim',
+        ft = "python"
+    }
+
     --use({
     --"folke/noice.nvim",
     --config = function()
