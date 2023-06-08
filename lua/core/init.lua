@@ -36,6 +36,10 @@ vim.g.loaded_netrw             = 1
 vim.g.loaded_netrwPlugin       = 1
 vim.g.loaded_tutor_mode_plugin = 1
 vim.g.loaded_remote_plugins    = 1
+
+vim.opt.filetype = "on"
+vim.g.do_filetype_lua    = 1
+vim.g.did_load_filetypes = 0
 require("core.theme")
 
 --vim.g.webdevicons_enable = 1
@@ -59,29 +63,29 @@ require("configs.bufferline").config()
 require("configs.grammar").config()
 require("configs.coc-nvim").config()
 require("nvim-lsp-installer").setup{}
-require("mason").setup({
-    ui = {
-        icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗"
-        }
-    }
-})
+--require("mason").setup({
+    --ui = {
+        --icons = {
+            --package_installed = "✓",
+            --package_pending = "➜",
+            --package_uninstalled = "✗"
+        --}
+    --}
+--})
 
-require("null-ls").setup({
-    sources = {
-        --require("null-ls").builtins.formatting.stylua,
-        --require("null-ls").builtins.diagnostics.eslint,
-        require("null-ls").builtins.formatting.json_tool,
-        require("null-ls").builtins.formatting.black,
-        require("null-ls").builtins.formatting.clang_format,
-        require("null-ls").builtins.formatting.beautysh,
-        require("null-ls").builtins.formatting.gofmt,
-        require("null-ls").builtins.formatting.lua_format,
-        require("null-ls").builtins.formatting.markdownlint,
-    },
-})
+--require("null-ls").setup({
+    --sources = {
+        ----require("null-ls").builtins.formatting.stylua,
+        ----require("null-ls").builtins.diagnostics.eslint,
+        --require("null-ls").builtins.formatting.json_tool,
+        --require("null-ls").builtins.formatting.black,
+        --require("null-ls").builtins.formatting.clang_format,
+        --require("null-ls").builtins.formatting.beautysh,
+        --require("null-ls").builtins.formatting.gofmt,
+        --require("null-ls").builtins.formatting.lua_format,
+        --require("null-ls").builtins.formatting.markdownlint,
+    --},
+--})
 
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.gopls.setup{}
