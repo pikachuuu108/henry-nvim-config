@@ -53,6 +53,7 @@ return require('packer').startup(function()
 
 	use 'hrsh7th/cmp-vsnip'
 	use 'hrsh7th/vim-vsnip'
+    use 'hrsh7th/vim-vsnip-integ'
 
 	use 'saadparwaiz1/cmp_luasnip'
 	--use 'L3MON4D3/LuaSnip'
