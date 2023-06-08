@@ -281,8 +281,10 @@ _G.packer_plugins = {
     url = "https://github.com/luochen1990/rainbow"
   },
   ropevim = {
-    loaded = true,
-    path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/start/ropevim",
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/opt/ropevim",
     url = "https://github.com/python-rope/ropevim"
   },
   sonokai = {
@@ -397,6 +399,13 @@ time([[Config for todo-comments.nvim]], false)
 time([[Config for null-ls.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fnull-ls\frequire\0", "config", "null-ls.nvim")
 time([[Config for null-ls.nvim]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Filetype lazy-loads
+time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType python ++once lua require("packer.load")({'ropevim'}, { ft = "python" }, _G.packer_plugins)]]
+time([[Defining lazy-load filetype autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
