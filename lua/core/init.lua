@@ -1,22 +1,23 @@
 -- basics
 vim.cmd('syntax on')
 vim.cmd('filetype plugin indent on')
-vim.opt.number          = true
-vim.opt.relativenumber  = true
-vim.opt.termguicolors   = true
-vim.opt.shiftround      = true
-vim.opt.updatetime      = 100
-vim.opt.cursorline      = true
-vim.opt.autowrite       = true
+vim.opt.number         = true
+vim.opt.relativenumber = true
+vim.opt.termguicolors  = true
+vim.opt.shiftround     = true
+vim.opt.updatetime     = 100
+vim.opt.cursorline     = true
+vim.opt.autowrite      = true
 if (vim.fn.has('termguicolors') == 1) then
     vim.opt.termguicolors = true
 end
+vim.opt.filetype    = "on"
 -- tabs
-vim.opt.autoindent      = true
-vim.opt.tabstop         = 4
-vim.opt.shiftwidth      = 4
-vim.opt.softtabstop     = 4
-vim.opt.expandtab       = true
+vim.opt.autoindent  = true
+vim.opt.tabstop     = 4
+vim.opt.shiftwidth  = 4
+vim.opt.softtabstop = 4
+vim.opt.expandtab   = true
 
 require("core.keymaps")
 require("core.plugins")
@@ -43,7 +44,7 @@ require("core.theme")
 -- Load plugin configs
 require("impatient")
 
-require'nvim-autopairs'.setup{}
+require 'nvim-autopairs'.setup {}
 
 --require("configs.autocomplete").config()
 --require("configs.nvim-cmp").config()
@@ -57,32 +58,30 @@ require("configs.outlinetree").config()
 require("configs.bufferline").config()
 require("configs.grammar").config()
 require("configs.coc-nvim").config()
-require("nvim-lsp-installer").setup{}
+require("nvim-lsp-installer").setup {}
 
-require'lspconfig'.pyright.setup{}
-require'lspconfig'.gopls.setup{}
-require'lspconfig'.bashls.setup{}
+require("configs.lsp").config()
 
 vim.api.nvim_set_keymap('n', '<c-P>',
     "<cmd>lua require('fzf-lua').files()<CR>",
     { noremap = true, silent = true })
 
-require'colorizer'.setup()
-require'colorizer'.setup{
-    'python';
-    html={
+require 'colorizer'.setup()
+require 'colorizer'.setup {
+    'python',
+    html = {
         mode = 'foreground'
     }
 }
 require("configs.todo-comments").config()
 --require("configs.coc-nvim").config()
 
-vim.cmd[[augroup rainbow]]
-vim.cmd[[	au BufEnter *     hi      TSPunctBracket NONE]]
-vim.cmd[[	au BufEnter *     hi link TSPunctBracket nonexistenthl]]
-vim.cmd[[	au BufEnter *.lua hi      TSConstructor  NONE]]
-vim.cmd[[	au BufEnter *.lua hi link TSConstructor  nonexistenthl]]
-vim.cmd[[augroup END]]
+vim.cmd [[augroup rainbow]]
+vim.cmd [[	au BufEnter *     hi      TSPunctBracket NONE]]
+vim.cmd [[	au BufEnter *     hi link TSPunctBracket nonexistenthl]]
+vim.cmd [[	au BufEnter *.lua hi      TSConstructor  NONE]]
+vim.cmd [[	au BufEnter *.lua hi link TSConstructor  nonexistenthl]]
+vim.cmd [[augroup END]]
 
 -- gitgutter
 vim.g.gitgutter_preview_win_floating = 1

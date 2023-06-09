@@ -8,7 +8,7 @@ return require('packer').startup(function()
 	-- starup time optimise
 	use 'dstein64/vim-startuptime'
 	use 'lewis6991/impatient.nvim'
-	use 'nathom/filetype.nvim'
+	--use 'nathom/filetype.nvim'
 
 	-- buffer
 	use {
@@ -34,8 +34,6 @@ return require('packer').startup(function()
 	}
 
 	-- language
-	use "williamboman/nvim-lsp-installer"
-	use 'neovim/nvim-lspconfig'
 
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
@@ -158,6 +156,16 @@ return require('packer').startup(function()
     use 'junegunn/vim-easy-align'
 
     use 'nvim-treesitter/playground'
+
+    -- lsp
+	use "williamboman/nvim-lsp-installer"
+	use 'neovim/nvim-lspconfig'
+	use 'williamboman/mason-lspconfig.nvim'
+    use {
+        "williamboman/mason.nvim",
+        run = ":MasonUpdate" -- :MasonUpdate updates registry contents
+    }
+    use 'jose-elias-alvarez/null-ls.nvim'
 
     --use 'Exafunction/codeium.vim'
 end)
