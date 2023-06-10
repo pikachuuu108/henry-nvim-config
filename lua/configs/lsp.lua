@@ -22,7 +22,7 @@ function M.config()
         -- The first entry (without a key) will be the default handler
         -- and will be called for each installed server that doesn't have
         -- a dedicated handler.
-        function(server_name)  -- default handler (optional)
+        function(server_name) -- default handler (optional)
             require("lspconfig")[server_name].setup {}
         end,
         -- Next, you can provide a dedicated handler for specific servers.
@@ -35,9 +35,18 @@ function M.config()
 
     null_ls.setup({
         sources = {
-            --null_ls.builtins.formatting.stylua,
+            null_ls.builtins.code_actions.refactoring,
+            null_ls.builtins.code_actions.shellcheck,
             --null_ls.builtins.diagnostics.eslint,
             null_ls.builtins.completion.spell,
+            --null_ls.builtins.formatting.stylua,
+            null_ls.builtins.formatting.beautysh,
+            null_ls.builtins.formatting.black, -- python
+            --null_ls.builtins.formatting.shfmt, -- bash
+            null_ls.builtins.formatting.gofmt, -- golang
+            null_ls.builtins.formatting.json_tool,
+            null_ls.builtins.hover.dictionary,
+            null_ls.builtins.hover.printenv,
         },
     })
 end
