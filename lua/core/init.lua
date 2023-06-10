@@ -44,7 +44,9 @@ require("core.theme")
 -- Load plugin configs
 require("impatient")
 
-require 'nvim-autopairs'.setup {}
+require('nvim-autopairs').setup({
+  disable_filetype = { "TelescopePrompt" , "vim" },
+})
 
 --require("configs.autocomplete").config()
 --require("configs.nvim-cmp").config()
@@ -58,7 +60,6 @@ require("configs.outlinetree").config()
 require("configs.bufferline").config()
 require("configs.grammar").config()
 require("configs.coc-nvim").config()
-require("nvim-lsp-installer").setup {}
 
 require("configs.lsp").config()
 

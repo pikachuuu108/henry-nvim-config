@@ -158,7 +158,6 @@ return require('packer').startup(function()
     use 'nvim-treesitter/playground'
 
     -- lsp
-    use "williamboman/nvim-lsp-installer"
     use 'neovim/nvim-lspconfig'
     use 'williamboman/mason-lspconfig.nvim'
     use {
@@ -169,6 +168,9 @@ return require('packer').startup(function()
         'jose-elias-alvarez/null-ls.nvim',
         requires = { "nvim-lua/plenary.nvim" },
     })
+
+    --use 'mfussengger/nvim-dap'
+    --use 'mfussengger/nvim-lint'
 
     --use 'Exafunction/codeium.vim'
 end)

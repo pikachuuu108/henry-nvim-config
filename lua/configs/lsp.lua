@@ -8,14 +8,27 @@ function M.config()
     local mason_lspconfig = require("mason-lspconfig")
     local null_ls = require("null-ls")
 
-    mason.setup()
+    mason.setup({
+        ui = {
+            icons = {
+                package_installed = "✓",
+                package_pending = "➜",
+                package_uninstalled = "✗"
+            }
+        }
+    })
     mason_lspconfig.setup({
         ensure_installed = {
             "lua_ls",
             "bashls",
             "pyright",
+            --"yaml-language-server",
             "jsonls",
             "rome",
+            "yamlls",
+            "gopls",
+            --"jsonlint",
+            --"pylint",
         }
     })
     mason_lspconfig.setup_handlers {
@@ -36,8 +49,11 @@ function M.config()
     null_ls.setup({
         sources = {
             null_ls.builtins.code_actions.refactoring,
-            null_ls.builtins.code_actions.shellcheck,
-            --null_ls.builtins.diagnostics.eslint,
+            --null_ls.builtins.code_actions.shellcheck,
+            --null_ls.builtins.diagnostics.checkmake,
+            --null_ls.builtins.diagnostics.commitlint,
+            null_ls.builtins.diagnostics.flake8,
+            null_ls.builtins.diagnostics.golangci_lint,
             null_ls.builtins.completion.spell,
             --null_ls.builtins.formatting.stylua,
             null_ls.builtins.formatting.beautysh,
