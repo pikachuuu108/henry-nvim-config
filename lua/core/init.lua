@@ -81,7 +81,7 @@ require("configs.outlinetree").config()
 require("configs.bufferline").config()
 require("configs.grammar").config()
 require("configs.coc-nvim").config()
-require("nvim-lsp-installer").setup{}
+--require("nvim-lsp-installer").setup{}
 --require("mason").setup({
     --ui = {
         --icons = {
@@ -91,26 +91,27 @@ require("nvim-lsp-installer").setup{}
         --}
     --}
 --})
+require("configs.lsp").config()
 
-require("null-ls").setup({
-    sources = {
-        --require("null-ls").builtins.formatting.stylua,
-        --require("null-ls").builtins.diagnostics.eslint,
-        --require("null-ls").builtins.formatting.clang_format,
-        require("null-ls").builtins.formatting.json_tool,
-        require("null-ls").builtins.formatting.black,
-        require("null-ls").builtins.formatting.beautysh,
-        require("null-ls").builtins.formatting.gofmt,
-        require("null-ls").builtins.formatting.lua_format,
-        require("null-ls").builtins.formatting.markdownlint,
-    },
-})
+--require("null-ls").setup({
+    --sources = {
+        ----require("null-ls").builtins.formatting.stylua,
+        ----require("null-ls").builtins.diagnostics.eslint,
+        ----require("null-ls").builtins.formatting.clang_format,
+        --require("null-ls").builtins.formatting.json_tool,
+        --require("null-ls").builtins.formatting.black,
+        --require("null-ls").builtins.formatting.beautysh,
+        --require("null-ls").builtins.formatting.gofmt,
+        --require("null-ls").builtins.formatting.lua_format,
+        --require("null-ls").builtins.formatting.markdownlint,
+    --},
+--})
 
-require'lspconfig'.pyright.setup{}
-require'lspconfig'.gopls.setup{}
-require'lspconfig'.bashls.setup{}
-require'lspconfig'.jsonls.setup{}
-require'lspconfig'.yamlls.setup{}
+--require'lspconfig'.pyright.setup{}
+--require'lspconfig'.gopls.setup{}
+--require'lspconfig'.bashls.setup{}
+--require'lspconfig'.jsonls.setup{}
+--require'lspconfig'.yamlls.setup{}
 
 vim.api.nvim_set_keymap('n', '<c-P>',
     "<cmd>lua require('fzf-lua').files()<CR>",
