@@ -42,13 +42,13 @@ return require('packer').startup(function()
 	use 'hrsh7th/cmp-path'
 	use 'hrsh7th/cmp-cmdline'
 	use 'hrsh7th/nvim-cmp'
-    --use({
-        --"jose-elias-alvarez/null-ls.nvim",
-        --config = function()
-            --require("null-ls").setup()
-        --end,
-        --requires = { "nvim-lua/plenary.nvim" },
-    --})
+    use({
+        "jose-elias-alvarez/null-ls.nvim",
+        config = function()
+            require("null-ls").setup()
+        end,
+        requires = { "nvim-lua/plenary.nvim" },
+    })
 
 	use 'hrsh7th/cmp-vsnip'
 	use 'hrsh7th/vim-vsnip'
@@ -117,7 +117,7 @@ return require('packer').startup(function()
 	
 	use 'preservim/tagbar' 
 
-	use 'windwp/nvim-autopairs'
+    use 'windwp/nvim-autopairs'
 
     use 'luochen1990/rainbow'
 

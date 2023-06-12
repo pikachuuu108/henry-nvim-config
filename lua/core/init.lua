@@ -42,12 +42,31 @@ vim.g.do_filetype_lua    = 1
 vim.g.did_load_filetypes = 0
 require("core.theme")
 
+
+-----------------
+--  lazy nvim  --
+-----------------
+
+--local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+--if not vim.loop.fs_stat(lazypath) then
+  --vim.fn.system({
+    --"git",
+    --"clone",
+    --"--filter=blob:none",
+    --"https://github.com/folke/lazy.nvim.git",
+    --"--branch=stable", -- latest stable release
+    --lazypath,
+  --})
+--end
+--vim.opt.rtp:prepend(lazypath)
+
+-- require("lazy").setup()
+
 --vim.g.webdevicons_enable = 1
 
 -- Load plugin configs
 -- plugins without extra configs are configured directly here
 require("impatient")
-require'nvim-autopairs'.setup{}
 
 --require("configs.autocomplete").config()
 --require("configs.nvim-cmp").config()
@@ -73,19 +92,19 @@ require("nvim-lsp-installer").setup{}
     --}
 --})
 
---require("null-ls").setup({
-    --sources = {
-        ----require("null-ls").builtins.formatting.stylua,
-        ----require("null-ls").builtins.diagnostics.eslint,
-        --require("null-ls").builtins.formatting.json_tool,
-        --require("null-ls").builtins.formatting.black,
+require("null-ls").setup({
+    sources = {
+        --require("null-ls").builtins.formatting.stylua,
+        --require("null-ls").builtins.diagnostics.eslint,
         --require("null-ls").builtins.formatting.clang_format,
-        --require("null-ls").builtins.formatting.beautysh,
-        --require("null-ls").builtins.formatting.gofmt,
-        --require("null-ls").builtins.formatting.lua_format,
-        --require("null-ls").builtins.formatting.markdownlint,
-    --},
---})
+        require("null-ls").builtins.formatting.json_tool,
+        require("null-ls").builtins.formatting.black,
+        require("null-ls").builtins.formatting.beautysh,
+        require("null-ls").builtins.formatting.gofmt,
+        require("null-ls").builtins.formatting.lua_format,
+        require("null-ls").builtins.formatting.markdownlint,
+    },
+})
 
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.gopls.setup{}
@@ -107,6 +126,9 @@ require'colorizer'.setup{
 
 require("configs.todo-comments").config()
 --require("configs.coc-nvim").config()
+require('nvim-autopairs').setup({
+  disable_filetype = { "TelescopePrompt" , "vim" },
+})
 
 vim.cmd[[augroup rainbow]]
 vim.cmd[[	au BufEnter *     hi      TSPunctBracket NONE]]
