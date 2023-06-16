@@ -18,6 +18,8 @@ vim.opt.shiftwidth      = 4
 vim.opt.softtabstop     = 4
 vim.opt.expandtab       = true
 
+ 
+
 require("core.keymaps")
 require("core.plugins")
 -- disable some useless standard plugins to save startup time
@@ -47,20 +49,20 @@ require("core.theme")
 --  lazy nvim  --
 -----------------
 
---local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
---if not vim.loop.fs_stat(lazypath) then
-  --vim.fn.system({
-    --"git",
-    --"clone",
-    --"--filter=blob:none",
-    --"https://github.com/folke/lazy.nvim.git",
-    --"--branch=stable", -- latest stable release
-    --lazypath,
-  --})
---end
---vim.opt.rtp:prepend(lazypath)
-
--- require("lazy").setup()
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+-- require("core/lazyplug")
+-- require("lazy").setup(plugins, opts)
 
 --vim.g.webdevicons_enable = 1
 
@@ -91,7 +93,7 @@ require("configs.coc-nvim").config()
         --}
     --}
 --})
-require("configs.lsp").config()
+ require("configs.lsp").config()
 
 --require("null-ls").setup({
     --sources = {
@@ -112,6 +114,7 @@ require("configs.lsp").config()
 --require'lspconfig'.bashls.setup{}
 --require'lspconfig'.jsonls.setup{}
 --require'lspconfig'.yamlls.setup{}
+--
 
 vim.api.nvim_set_keymap('n', '<c-P>',
     "<cmd>lua require('fzf-lua').files()<CR>",

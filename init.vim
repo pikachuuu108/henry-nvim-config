@@ -56,12 +56,12 @@ set hlsearch
 
 let mapleader="\<space>"
 
-call plug#begin('$HOME/.local/share/nvim/plugged')
+" call plug#begin('$HOME/.local/share/nvim/plugged')
 
 "Plug 'scrooloose/nerdcommenter'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "" Initialize plugin system
-call plug#end()
+" call plug#end()
 
 map <F5> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
