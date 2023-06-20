@@ -82,6 +82,10 @@ require("configs.outlinetree").config()
 --require("configs.startscreen").config()
 require("configs.bufferline").config()
 require("configs.grammar").config()
+require("configs.lsp").config()
+require('nvim-autopairs').setup({
+  disable_filetype = { "TelescopePrompt" , "vim" },
+})
 require("configs.coc-nvim").config()
 --require("nvim-lsp-installer").setup{}
 --require("mason").setup({
@@ -93,7 +97,6 @@ require("configs.coc-nvim").config()
         --}
     --}
 --})
- require("configs.lsp").config()
 
 --require("null-ls").setup({
     --sources = {
@@ -130,9 +133,6 @@ require'colorizer'.setup{
 
 require("configs.todo-comments").config()
 --require("configs.coc-nvim").config()
-require('nvim-autopairs').setup({
-  disable_filetype = { "TelescopePrompt" , "vim" },
-})
 
 vim.cmd[[augroup rainbow]]
 vim.cmd[[	au BufEnter *     hi      TSPunctBracket NONE]]
