@@ -141,6 +141,8 @@ vim.cmd[[	au BufEnter *.lua hi      TSConstructor  NONE]]
 vim.cmd[[	au BufEnter *.lua hi link TSConstructor  nonexistenthl]]
 vim.cmd[[augroup END]]
 
+-- vim.g.easy_align_ignore_groups = ['Comment']
+
 vim.g.gitgutter_preview_win_floating = 1
 -- hightlight_lines conflicts with todo-comments
 vim.g.gitgutter_highlight_lines = 0
