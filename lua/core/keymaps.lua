@@ -123,3 +123,6 @@ vim.keymap.set('n', '<leader>b', ':call gitblame#echo()<CR>')
 -- vim-easy-align
 vim.keymap.set('n', 'ga', '<Plug>(EasyAlign)')
 vim.keymap.set('v', 'ga', '<Plug>(EasyAlign)')
+
+-- fzf
+vim.keymap.set('n', '<leader>b', ':Buffers<CR>')
