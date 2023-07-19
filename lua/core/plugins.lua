@@ -175,6 +175,8 @@ return require('packer').startup(function()
         ft = "python"
     }
 
+    use 'kien/ctrlp.vim'
+
     --use({
     --"folke/noice.nvim",
     --config = function()

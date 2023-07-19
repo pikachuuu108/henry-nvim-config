@@ -125,4 +125,5 @@ vim.keymap.set('n', 'ga', '<Plug>(EasyAlign)')
 vim.keymap.set('v', 'ga', '<Plug>(EasyAlign)')
 
 -- fzf
-vim.keymap.set('n', '<leader>b', ':Buffers<CR>')
+vim.keymap.set('n', '<leader>bb', ':Buffers<CR>')
+--vim.keymap.set('n', '<leader>b', ':CtrlPBuffer<CR>')
