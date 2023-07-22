@@ -46,5 +46,6 @@
         },
         "semanticTokens": true
     },
-    "snippets.ultisnips.pythonPrompt": false
+    "snippets.ultisnips.pythonPrompt": false,
+    "python.pythonPath": "~/.config/nvim/python_env.sh"
 }
