@@ -1,5 +1,6 @@
 lua require('core.init')
 "let $PYTHONPATH="/Users/henry/anaconda3/envs/tf/bin/python"
+let g:python3_host_prog="/Users/henry/anaconda3/bin/python"
 
 "set guifont=SFMono\ NERD\ Font:h13
 set guifont=Monaco:h13
@@ -97,13 +98,13 @@ endfunc
 
 " =============================== Black ==============================
 "if v:version < 700 || !has('python3')
-	"func! __BLACK_MISSING()
-		"echo "The black.vim plugin requires vim7.0+ with Python 3.6 support."
-	"endfunc
-	"command! Black :call __BLACK_MISSING()
-	"command! BlackUpgrade :call __BLACK_MISSING()
-	"command! BlackVersion :call __BLACK_MISSING()
-	"finish
+    "func! __BLACK_MISSING()
+        "echo "The black.vim plugin requires vim7.0+ with Python 3.6 support."
+    "endfunc
+    "command! Black :call __BLACK_MISSING()
+    "command! BlackUpgrade :call __BLACK_MISSING()
+    "command! BlackVersion :call __BLACK_MISSING()
+    "finish
 "endif
 
 "if exists("g:load_black")
@@ -113,9 +114,9 @@ endfunc
 "let g:load_black = "py1.0"
 "if !exists("g:black_virtualenv")
   "if has("nvim")
-	"let g:black_virtualenv = "/Users/henry/anaconda3/envs/black" 
+    "let g:black_virtualenv = "/Users/henry/anaconda3/envs/black" 
   "else
-	"let g:black_virtualenv = "~/.vim/black"
+    "let g:black_virtualenv = "~/.vim/black"
   "endif
 "endif
 "if !exists("g:black_fast")
