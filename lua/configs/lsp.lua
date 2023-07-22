@@ -52,7 +52,7 @@ function M.config()
             --null_ls.builtins.code_actions.shellcheck,
             --null_ls.builtins.diagnostics.checkmake,
             --null_ls.builtins.diagnostics.commitlint,
-            null_ls.builtins.diagnostics.flake8,
+            --null_ls.builtins.diagnostics.flake8,
             null_ls.builtins.diagnostics.golangci_lint,
             null_ls.builtins.completion.spell,
             --null_ls.builtins.formatting.stylua,
