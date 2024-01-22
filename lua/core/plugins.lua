@@ -169,6 +169,20 @@ return require('packer').startup(function()
         requires = { "nvim-lua/plenary.nvim" },
     })
 
+    use {
+        'kawre/leetcode.nvim',
+        requires = {
+        "nvim-telescope/telescope.nvim",
+        "nvim-lua/plenary.nvim", -- required by telescope
+        "MunifTanjim/nui.nvim",
+
+        -- optional
+        "nvim-treesitter/nvim-treesitter",
+        "rcarriga/nvim-notify",
+        "nvim-tree/nvim-web-devicons",
+        },
+        run = ":TSUpdate html"
+    }
     --use 'mfussengger/nvim-dap'
     --use 'mfussengger/nvim-lint'
 
