@@ -153,6 +153,7 @@ return require('packer').startup(function()
     use 'kshenoy/vim-signature'
 
     use 'honza/vim-snippets'
+    use 'norcalli/snippets.nvim'
 
     use 'junegunn/vim-easy-align'
 
@@ -176,6 +177,8 @@ return require('packer').startup(function()
     }
 
     use 'kien/ctrlp.vim'
+
+    use 'kawre/leetcode.nvim'
 
     --use({
     --"folke/noice.nvim",

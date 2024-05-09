@@ -27,6 +27,7 @@ function M.config()
             "rome",
             "yamlls",
             "gopls",
+            "clangd"
             --"jsonlint",
             --"pylint",
         }

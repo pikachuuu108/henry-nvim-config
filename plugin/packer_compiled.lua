@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/henry.luohr/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/henry.luohr/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/henry.luohr/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/henry.luohr/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/henry.luohr/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/Users/henry.luohr/.cache/nvim/packer_hererocks/2.1.1699801871/share/lua/5.1/?.lua;/Users/henry.luohr/.cache/nvim/packer_hererocks/2.1.1699801871/share/lua/5.1/?/init.lua;/Users/henry.luohr/.cache/nvim/packer_hererocks/2.1.1699801871/lib/luarocks/rocks-5.1/?.lua;/Users/henry.luohr/.cache/nvim/packer_hererocks/2.1.1699801871/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/henry.luohr/.cache/nvim/packer_hererocks/2.1.1699801871/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -129,6 +129,11 @@ _G.packer_plugins = {
     path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
+  ["ctrlp.vim"] = {
+    loaded = true,
+    path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/start/ctrlp.vim",
+    url = "https://github.com/kien/ctrlp.vim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -173,6 +178,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
     url = "https://github.com/rebelot/kanagawa.nvim"
+  },
+  ["leetcode.nvim"] = {
+    loaded = true,
+    path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/start/leetcode.nvim",
+    url = "https://github.com/kawre/leetcode.nvim"
   },
   ["lsp_signature.nvim"] = {
     loaded = true,
@@ -280,6 +290,11 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/opt/ropevim",
     url = "https://github.com/python-rope/ropevim"
+  },
+  ["snippets.nvim"] = {
+    loaded = true,
+    path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/start/snippets.nvim",
+    url = "https://github.com/norcalli/snippets.nvim"
   },
   sonokai = {
     loaded = true,

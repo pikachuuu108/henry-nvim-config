@@ -144,6 +144,8 @@ function M.config()
     keyset("v", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
     keyset("v", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
 
+    keyset("n", "<leader>fq", "coc#float#close_all()", opts)
+
 
     -- Use CTRL-S for selections ranges.
     -- Requires 'textDocument/selectionRange' support of language server.
