@@ -73,7 +73,7 @@ func! CompileRunGcc()
 		"exec "!g++ % -o %<"
         "exec "!clang % -o %<"
         exec "!g++ -std=c++17 -g % -o %:r && ./%:r"
-		exec "!time ./%<"
+		"exec "!time ./%<"
 	elseif &filetype == 'java'
 		exec "!javac %"
 		exec "!time java %<"
@@ -199,6 +199,10 @@ let g:NERDTreeFileExtensionHighlightFullName = 1
 
 let g:easy_align_ignore_groups = ['Comment', 'String']
 
+
+
+" ================================= ale ================================
+let b:ale_fixers = {'cpp': ['astyle']}
 
 
 " ================================= rainbow ================================

@@ -180,6 +180,8 @@ return require('packer').startup(function()
 
     use 'kawre/leetcode.nvim'
 
+    use 'dense-analysis/ale'
+
     --use({
     --"folke/noice.nvim",
     --config = function()
