@@ -186,5 +186,28 @@ return require('packer').startup(function()
     --use 'mfussengger/nvim-dap'
     --use 'mfussengger/nvim-lint'
 
-    --use 'Exafunction/codeium.vim'
+    use 'kien/ctrlp.vim'
+
+    use 'dense-analysis/ale'
+
+    --use({
+    --"folke/noice.nvim",
+    --config = function()
+    --require("noice").setup({
+    ---- add any options here
+    --})
+    --end,
+    --requires = {
+    ---- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    --"MunifTanjim/nui.nvim",
+    ---- OPTIONAL:
+    ----   `nvim-notify` is only needed, if you want to use the notification view.
+    ----   If not available, we use `mini` as the fallback
+    --"rcarriga/nvim-notify",
+    --}
+    --})
+
+    ----use 'beauwilliams/statusline.lua'
+
+    --use 'tamton-aquib/staline.nvim'
 end)

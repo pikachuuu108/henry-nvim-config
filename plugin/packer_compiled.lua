@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/henry/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ale = {
+    loaded = true,
+    path = "/Users/henry/.local/share/nvim/site/pack/packer/start/ale",
+    url = "https://github.com/dense-analysis/ale"
+  },
   ["aleph-nvim"] = {
     loaded = true,
     path = "/Users/henry/.local/share/nvim/site/pack/packer/start/aleph-nvim",
@@ -133,6 +138,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/henry/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
+  },
+  ["ctrlp.vim"] = {
+    loaded = true,
+    path = "/Users/henry/.local/share/nvim/site/pack/packer/start/ctrlp.vim",
+    url = "https://github.com/kien/ctrlp.vim"
   },
   ["friendly-snippets"] = {
     loaded = true,

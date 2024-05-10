@@ -74,7 +74,7 @@ func! CompileRunGcc()
 		"exec "!g++ % -o %<"
         "exec "!clang % -o %<"
         exec "!g++ -std=c++17 -g % -o %:r && ./%:r"
-		exec "!time ./%<"
+		"exec "!time ./%<"
 	elseif &filetype == 'java'
 		exec "!javac %"
 		exec "!time java %<"
@@ -347,6 +347,10 @@ nnoremap ff :Black<cr>
 "autocmd filetype nerdtree syn match go_icon ## containedin=NERDTreeFlags
 
 let g:NERDTreeLimitedSyntax = 1
+
+
+" ================================= ale ================================
+let b:ale_fixers = {'cpp': ['astyle']}
 
 
 " ================================= rainbow ================================
