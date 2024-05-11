@@ -174,6 +174,11 @@ _G.packer_plugins = {
     path = "/Users/henry/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
     url = "https://github.com/rebelot/kanagawa.nvim"
   },
+  ["leetcode.nvim"] = {
+    loaded = true,
+    path = "/Users/henry/.local/share/nvim/site/pack/packer/start/leetcode.nvim",
+    url = "https://github.com/kawre/leetcode.nvim"
+  },
   ["lsp_signature.nvim"] = {
     loaded = true,
     path = "/Users/henry/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
@@ -209,6 +214,11 @@ _G.packer_plugins = {
     path = "/Users/henry/.local/share/nvim/site/pack/packer/start/nerdtree",
     url = "https://github.com/preservim/nerdtree"
   },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/Users/henry/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/henry/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -233,6 +243,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/henry/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/Users/henry/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-snippy"] = {
     loaded = true,
