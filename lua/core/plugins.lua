@@ -182,6 +182,8 @@ return require('packer').startup(function()
 
     use 'dense-analysis/ale'
 
+    use 'github/copilot.vim'
+
     --use({
     --"folke/noice.nvim",
     --config = function()
