@@ -180,9 +180,21 @@ return require('packer').startup(function()
 
     use 'kawre/leetcode.nvim'
 
-    use 'dense-analysis/ale'
+    --------------
+    --  linter  --
+    --------------
 
-    use 'github/copilot.vim'
+    use 'mfussenegger/nvim-lint'
+    --use 'dense-analysis/ale'
+    --
+
+    -----------------
+    --  formatter  --
+    -----------------
+    use 'mhartington/formatter.nvim'
+
+
+    --use 'github/copilot.vim'
 
     --use({
     --"folke/noice.nvim",
