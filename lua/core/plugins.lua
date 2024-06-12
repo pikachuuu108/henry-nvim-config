@@ -178,7 +178,7 @@ return require('packer').startup(function()
 
     use 'kien/ctrlp.vim'
 
-    use 'kawre/leetcode.nvim'
+    --use 'kawre/leetcode.nvim'
 
     --------------
     --  linter  --

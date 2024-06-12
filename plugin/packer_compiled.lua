@@ -184,11 +184,6 @@ _G.packer_plugins = {
     path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
     url = "https://github.com/rebelot/kanagawa.nvim"
   },
-  ["leetcode.nvim"] = {
-    loaded = true,
-    path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/start/leetcode.nvim",
-    url = "https://github.com/kawre/leetcode.nvim"
-  },
   ["lsp_signature.nvim"] = {
     loaded = true,
     path = "/Users/henry.luohr/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
