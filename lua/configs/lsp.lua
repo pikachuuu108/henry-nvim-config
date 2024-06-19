@@ -50,15 +50,14 @@ function M.config()
     }
 
     require('lint').linters_by_ft = {
-        markdown = {'vale',},
-        cpp = {'cpplint'},
-        python = {'pylint'},
+        markdown = { 'vale', },
+        cpp = { 'cpplint' },
+        python = { 'pylint' },
     }
 
-    vim.cmd[[ au BufWritePost * lua require('lint').try_lint() ]]
+    vim.cmd [[ au BufWritePost * lua require('lint').try_lint() ]]
     vim.api.nvim_create_autocmd({ "BufWritePost" }, {
         callback = function()
-
             -- try_lint without arguments runs the linters defined in `linters_by_ft`
             -- for the current filetype
             require("lint").try_lint()
@@ -67,27 +66,27 @@ function M.config()
             -- run specific linters, independent of the `linters_by_ft` configuration
             --require("lint").try_lint("cspell")
         end,
-        })
+    })
 
 
     --null_ls.setup({
-        --sources = {
-            --null_ls.builtins.code_actions.refactoring,
-            ----null_ls.builtins.code_actions.shellcheck,
-            ----null_ls.builtins.diagnostics.checkmake,
-            ----null_ls.builtins.diagnostics.commitlint,
-            --null_ls.builtins.diagnostics.flake8,
-            --null_ls.builtins.diagnostics.golangci_lint,
-            --null_ls.builtins.completion.spell,
-            ----null_ls.builtins.formatting.stylua,
-            --null_ls.builtins.formatting.beautysh,
-            --null_ls.builtins.formatting.black, -- python
-            ----null_ls.builtins.formatting.shfmt, -- bash
-            --null_ls.builtins.formatting.gofmt, -- golang
-            --null_ls.builtins.formatting.json_tool,
-            --null_ls.builtins.hover.dictionary,
-            --null_ls.builtins.hover.printenv,
-        --},
+    --sources = {
+    --null_ls.builtins.code_actions.refactoring,
+    ----null_ls.builtins.code_actions.shellcheck,
+    ----null_ls.builtins.diagnostics.checkmake,
+    ----null_ls.builtins.diagnostics.commitlint,
+    --null_ls.builtins.diagnostics.flake8,
+    --null_ls.builtins.diagnostics.golangci_lint,
+    --null_ls.builtins.completion.spell,
+    ----null_ls.builtins.formatting.stylua,
+    --null_ls.builtins.formatting.beautysh,
+    --null_ls.builtins.formatting.black, -- python
+    ----null_ls.builtins.formatting.shfmt, -- bash
+    --null_ls.builtins.formatting.gofmt, -- golang
+    --null_ls.builtins.formatting.json_tool,
+    --null_ls.builtins.hover.dictionary,
+    --null_ls.builtins.hover.printenv,
+    --},
     --})
 
     local util = require("formatter.util")
@@ -103,45 +102,42 @@ function M.config()
             -- Formatter configurations for filetype "lua" go here
             -- and will be executed in order
             lua = {
-            -- "formatter.filetypes.lua" defines default configurations for the
-            -- "lua" filetype
-            require("formatter.filetypes.lua").stylua,
+                -- "formatter.filetypes.lua" defines default configurations for the
+                -- "lua" filetype
+                require("formatter.filetypes.lua").stylua,
 
-            -- You can also define your own configuration
-            function()
-                -- Supports conditional formatting
-                if util.get_current_buffer_file_name() == "special.lua" then
-                return nil
+                -- You can also define your own configuration
+                function()
+                    -- Supports conditional formatting
+                    if util.get_current_buffer_file_name() == "special.lua" then
+                        return nil
+                    end
+
+                    -- Full specification of configurations is down below and in Vim help
+                    -- files
+                    return {
+                        exe = "stylua",
+                        args = {
+                            "--search-parent-directories",
+                            "--stdin-filepath",
+                            util.escape_path(util.get_current_buffer_file_path()),
+                            "--",
+                            "-",
+                        },
+                        stdin = true,
+                    }
                 end
-
-                -- Full specification of configurations is down below and in Vim help
-                -- files
-                return {
-                exe = "stylua",
-                args = {
-                    "--search-parent-directories",
-                    "--stdin-filepath",
-                    util.escape_path(util.get_current_buffer_file_path()),
-                    "--",
-                    "-",
-                },
-                stdin = true,
-                }
-            end
             },
 
             -- Use the special "*" filetype for defining formatter configurations on
             -- any filetype
             ["*"] = {
-            -- "formatter.filetypes.any" defines default configurations for any
-            -- filetype
-            require("formatter.filetypes.any").remove_trailing_whitespace
+                -- "formatter.filetypes.any" defines default configurations for any
+                -- filetype
+                require("formatter.filetypes.any").remove_trailing_whitespace
             }
         }
     }
-    
-    
-    
 end
 
 return M
