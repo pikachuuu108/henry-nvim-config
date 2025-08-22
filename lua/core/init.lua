@@ -19,6 +19,8 @@ vim.opt.shiftwidth  = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab   = true
 
+vim.g.ale_disable_lsp = 1
+
 require("core.keymaps")
 require("core.plugins")
 -- disable some useless standard plugins to save startup time

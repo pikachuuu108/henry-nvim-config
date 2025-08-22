@@ -29,7 +29,8 @@ function M.config()
             "gopls",
             --"jsonlint",
             --"pylint",
-        }
+        },
+        automatic_installation = false
     })
     mason_lspconfig.setup_handlers {
         -- The first entry (without a key) will be the default handler
