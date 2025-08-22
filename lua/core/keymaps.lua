@@ -63,8 +63,7 @@ vim.keymap.set('n', '<leader>d', ':Bdelete<cr>')
 vim.keymap.set('n', '[b', ':bp<cr>')
 vim.keymap.set('n', ']b', ':bn<cr>')
 -- p: plugins
-vim.keymap.set('n', '<leader>pi', ':PackerInstall<cr>')
-vim.keymap.set('n', '<leader>pc', ':PackerClean<cr>')
+-- Lazy.nvim manages plugins automatically, no need for manual Packer commands
 -- s: search
 vim.keymap.set('n', '<leader>ss', '/')
 vim.keymap.set('n', '<leader>sw', '/\\<lt>\\><left><left>')

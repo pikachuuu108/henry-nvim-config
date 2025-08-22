@@ -22,8 +22,7 @@ vim.opt.expandtab   = true
 vim.g.ale_disable_lsp = 1
 
 require("core.keymaps")
-require("configs.lazy").config()
---require("core.plugins")
+
 -- disable some useless standard plugins to save startup time
 -- these features have been better covered by plugins
 vim.g.loaded_matchparen        = 1
@@ -40,6 +39,10 @@ vim.g.loaded_netrw             = 1
 vim.g.loaded_netrwPlugin       = 1
 vim.g.loaded_tutor_mode_plugin = 1
 vim.g.loaded_remote_plugins    = 1
+
+-- Load Lazy.nvim plugin manager
+require("configs.lazy").config()
+
 require("core.theme")
 
 vim.g.webdevicons_enable = 1
@@ -61,7 +64,6 @@ require("configs.treesitter").config()
 require("configs.outlinetree").config()
 require("configs.bufferline").config()
 require("configs.grammar").config()
-require("configs.coc-nvim").config()
 require("configs.todo-comments").config()
 
 -- require("configs.lsp").config()
