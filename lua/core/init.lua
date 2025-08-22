@@ -22,7 +22,7 @@ vim.opt.expandtab   = true
 vim.g.ale_disable_lsp = 1
 
 require("core.keymaps")
-require("core.plugins")
+--require("core.plugins")
 -- disable some useless standard plugins to save startup time
 -- these features have been better covered by plugins
 vim.g.loaded_matchparen        = 1
@@ -93,4 +93,4 @@ vim.g.gitgutter_highlight_lines = 1
 vim.g.gitgutter_highlight_linenrs = 1
 
 -- kawre/leetcode.nvim
-
+require("configs.lazy").config()
