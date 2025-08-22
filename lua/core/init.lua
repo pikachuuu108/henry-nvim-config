@@ -22,6 +22,7 @@ vim.opt.expandtab   = true
 vim.g.ale_disable_lsp = 1
 
 require("core.keymaps")
+require("configs.lazy").config()
 --require("core.plugins")
 -- disable some useless standard plugins to save startup time
 -- these features have been better covered by plugins
@@ -41,7 +42,7 @@ vim.g.loaded_tutor_mode_plugin = 1
 vim.g.loaded_remote_plugins    = 1
 require("core.theme")
 
---vim.g.webdevicons_enable = 1
+vim.g.webdevicons_enable = 1
 
 -- Load plugin configs
 require("impatient")
@@ -58,25 +59,25 @@ require('nvim-autopairs').setup({
 require("configs.statusline").config()
 require("configs.treesitter").config()
 require("configs.outlinetree").config()
---require("configs.startscreen").config()
 require("configs.bufferline").config()
 require("configs.grammar").config()
 require("configs.coc-nvim").config()
+require("configs.todo-comments").config()
 
-require("configs.lsp").config()
+-- require("configs.lsp").config()
+--require("configs.startscreen").config()
 
 vim.api.nvim_set_keymap('n', '<c-P>',
     "<cmd>lua require('fzf-lua').files()<CR>",
     { noremap = true, silent = true })
 
-require 'colorizer'.setup()
-require 'colorizer'.setup {
-    'python',
-    html = {
-        mode = 'foreground'
-    }
-}
-require("configs.todo-comments").config()
+--require 'colorizer'.setup()
+--require 'colorizer'.setup {
+    --'python',
+    --html = {
+        --mode = 'foreground'
+    --}
+--}
 --require("configs.lc").config()
 --require("configs.coc-nvim").config()
 
@@ -93,4 +94,3 @@ vim.g.gitgutter_highlight_lines = 1
 vim.g.gitgutter_highlight_linenrs = 1
 
 -- kawre/leetcode.nvim
-require("configs.lazy").config()

@@ -1,9 +1,8 @@
 return {
-    {"wbthomason/packer.nvim"},
-    {"neoclide/coc.nvim", branch = "release"},
+    { "neoclide/coc.nvim",       branch = "release" },
     -- starup time optimise
-    {"dstein64/vim-startuptime"},
-    {"lewis6991/impatient.nvim"},
+    { "dstein64/vim-startuptime" },
+    { "lewis6991/impatient.nvim" },
     -- buffer
     {
         "akinsho/bufferline.nvim",
@@ -11,33 +10,39 @@ return {
             'kyazdani42/nvim-web-devicons'
         }
     },
-    {"moll/vim-bbye"}, -- for more sensible delete buffer cmd
+    { "moll/vim-bbye" }, -- for more sensible delete buffer cmd
     -- themes (disabled other themes to optimize startup time)
-    {"sainnhe/sonokai"},
-    {"tiagovla/tokyodark.nvim"},
-    {"rebelot/kanagawa.nvim"},
+    { "sainnhe/sonokai" },
+    { "tiagovla/tokyodark.nvim" },
+    { "rebelot/kanagawa.nvim" },
     {
         "kyazdani42/nvim-tree.lua",
         dependencies = {
             "kyazdani42/nvim-web-devicons"
         }
     },
-    {"hrsh7th/cmp-nvim-lsp"},
-    {"hrsh7th/cmp-buffer"},
-    {"hrsh7th/cmp-path"},
-    {"hrsh7th/cmp-cmdline"},
-    {"hrsh7th/nvim-cmp"},
-    {"hrsh7th/cmp-vsnip"},
-    {"hrsh7th/vim-vsnip"},
-    {"saadparwaiz1/cmp_luasnip"},
-    {"L3MON4D3/LuaSnip"},
-    {"dcampos/cmp-snippy"},
-    {"dcampos/nvim-snippy"},
-    {"nvim-treesitter/nvim-treesitter"},
-    {"onsails/lspkind-nvim"},
-    {"rafamadriz/friendly-snippets"},
-    {"ray-x/lsp_signature.nvim"},
-    {"lewis6991/gitsigns.nvim", tag = "release"},
+    { "hrsh7th/cmp-nvim-lsp" },
+    { "hrsh7th/cmp-buffer" },
+    { "hrsh7th/cmp-path" },
+    { "hrsh7th/cmp-cmdline" },
+    { "hrsh7th/nvim-cmp" },
+    { "hrsh7th/cmp-vsnip" },
+    { "hrsh7th/vim-vsnip" },
+    { "saadparwaiz1/cmp_luasnip" },
+    { "L3MON4D3/LuaSnip" },
+    -- { "dcampos/cmp-snippy" },
+    -- { "dcampos/nvim-snippy" },
+    { "nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate" },
+    { "onsails/lspkind-nvim" },
+    { "rafamadriz/friendly-snippets" },
+    {
+        "ray-x/lsp_signature.nvim",
+        event = "InsertEnter",
+        opts = {
+            -- cfg options
+        },
+    },
+    { "lewis6991/gitsigns.nvim",      tag = "release" },
     {
         "nvim-lualine/lualine.nvim",
         dependencies = {
@@ -46,96 +51,83 @@ return {
     },
 
     -- tagbar
-    {"simrat39/symbols-outline.nvim"},
-    {"voldikss/vim-floaterm"},
+    { "simrat39/symbols-outline.nvim" },
+    { "voldikss/vim-floaterm" },
     {
         "nvim-telescope/telescope.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim"
         }
     },
-    {"lukas-reineke/indent-blankline.nvim"},
-    {"rhysd/vim-grammarous"},
-    {"psf/black", branch = "stable"},
-    {"fatih/vim-go"},
+    { "lukas-reineke/indent-blankline.nvim" },
+    { "rhysd/vim-grammarous" },
+    { "psf/black",                          branch = "stable" },
+    { "fatih/vim-go" },
 
     -- Converted to Lazy.nvim format
     {
-        "preservim/nerdtree",
-        lazy = true
+        "preservim/nerdtree"
     },
 
     {
         "preservim/tagbar",
-        lazy = true
     },
 
     {
         "windwp/nvim-autopairs",
-        lazy = true
     },
 
     {
         "luochen1990/rainbow",
-        lazy = true
     },
 
     {
         "scrooloose/nerdcommenter",
-        lazy = true
     },
 
     {
         "junegunn/fzf.vim",
-        lazy = true
     },
 
     {
         "junegunn/fzf",
-        lazy = true
     },
 
     {
         "ibhagwan/fzf-lua",
-        lazy = true,
-        dependencies = {
-            "kyazdani42/nvim-web-devicons"
-        }
+        -- optional for icon support
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        -- or if using mini.icons/mini.nvim
+        -- dependencies = { "echasnovski/mini.icons" },
+        opts = {}
     },
 
     {
         "tpope/vim-fugitive",
-        lazy = true
     },
 
     {
         "norcalli/nvim-colorizer.lua",
-        lazy = true
     },
 
     {
         "ryanoasis/vim-devicons",
-        lazy = true
     },
 
     {
         "johnstef99/vim-nerdtree-syntax-highlight",
-        lazy = true
     },
 
     {
         "easymotion/vim-easymotion",
-        lazy = true
     },
 
     {
-        "airblade/vim-gitgutter",
-        lazy = true
+        "airblade/vim-gitgutter"
     },
 
     {
         "folke/todo-comments.nvim",
-        lazy = true,
         dependencies = {
             "nvim-lua/plenary.nvim"
         },
@@ -144,49 +136,45 @@ return {
 
     {
         "kshenoy/vim-signature",
-        lazy = true
     },
 
     {
         "honza/vim-snippets",
-        lazy = true
     },
 
     {
         "junegunn/vim-easy-align",
-        lazy = true
     },
 
     {
-        "nvim-treesitter/playground",
-        lazy = true
+        "nvim-treesitter/playground"
     },
 
     -- lsp
     {
         "neovim/nvim-lspconfig",
-        lazy = true
     },
 
     {
-        "williamboman/mason-lspconfig.nvim",
-        lazy = true
-    },
-
-    {
-        "williamboman/mason.nvim",
-        lazy = true,
-        run = ":MasonUpdate" -- :MasonUpdate updates registry contents
-    },
-
-    {
-        "jose-elias-alvarez/null-ls.nvim",
-        lazy = true,
+        "mason-org/mason-lspconfig.nvim",
+        opts = {},
         dependencies = {
-            "nvim-lua/plenary.nvim"
+            { "mason-org/mason.nvim", opts = {} },
+            "neovim/nvim-lspconfig",
         }
     },
-
+    {
+        "mason-org/mason.nvim",
+        opts = {
+            ui = {
+                icons = {
+                    package_installed = "✓",
+                    package_pending = "➜",
+                    package_uninstalled = "✗"
+                }
+            }
+        }
+    },
     {
         "kawre/leetcode.nvim",
         lazy = true,
@@ -202,11 +190,20 @@ return {
 
     {
         "kien/ctrlp.vim",
-        lazy = true
     },
 
     {
-        "dense-analysis/ale",
-        lazy = true
+        'dense-analysis/ale',
+        config = function()
+            -- Configuration goes here.
+            local g = vim.g
+
+            g.ale_ruby_rubocop_auto_correct_all = 1
+
+            g.ale_linters = {
+                ruby = { 'rubocop', 'ruby' },
+                lua = { 'lua_language_server' }
+            }
+        end
     }
 }
