@@ -1,5 +1,5 @@
 return {
-    { "neoclide/coc.nvim",       branch = "release" },
+    -- { "neoclide/coc.nvim",       branch = "release" },
     -- starup time optimise
     { "dstein64/vim-startuptime" },
     { "lewis6991/impatient.nvim" },

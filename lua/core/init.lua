@@ -55,7 +55,7 @@ require('nvim-autopairs').setup({
 })
 
 --require("configs.autocomplete").config()
---require("configs.nvim-cmp").config()
+require("configs.nvim-cmp")
 --require("configs.cmp")
 --require("configs.git").config()
 --require("configs.filetree").config()
@@ -66,7 +66,7 @@ require("configs.bufferline").config()
 require("configs.grammar").config()
 require("configs.todo-comments").config()
 
--- require("configs.lsp").config()
+require("configs.lsp").config()
 --require("configs.startscreen").config()
 
 vim.api.nvim_set_keymap('n', '<c-P>',

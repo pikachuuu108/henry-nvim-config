@@ -6,7 +6,10 @@ local M = {}
 function M.config()
     local mason = require("mason")
     local mason_lspconfig = require("mason-lspconfig")
-    local null_ls = require("null-ls")
+    -- local null_ls = require("null-ls")
+    
+    -- Add LSP capabilities for nvim-cmp
+    local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
     mason.setup({
         ui = {
@@ -30,42 +33,34 @@ function M.config()
             --"jsonlint",
             --"pylint",
         },
-        automatic_installation = false
+        automatic_installation = true
     })
-    mason_lspconfig.setup_handlers {
-        -- The first entry (without a key) will be the default handler
-        -- and will be called for each installed server that doesn't have
-        -- a dedicated handler.
-        function(server_name) -- default handler (optional)
-            require("lspconfig")[server_name].setup {}
-        end,
-        -- Next, you can provide a dedicated handler for specific servers.
-        -- For example, a handler override for the `rust_analyzer`:
-        --["rust_analyzer"] = function ()
-        --require("rust-tools").setup {}
-        --end
-    }
+    
+    -- Setup LSP servers manually for now
+    require("lspconfig").lua_ls.setup({
+        capabilities = capabilities
+    })
 
 
-    null_ls.setup({
-        sources = {
-            null_ls.builtins.code_actions.refactoring,
-            --null_ls.builtins.code_actions.shellcheck,
-            --null_ls.builtins.diagnostics.checkmake,
-            --null_ls.builtins.diagnostics.commitlint,
-            --null_ls.builtins.diagnostics.flake8,
-            null_ls.builtins.diagnostics.golangci_lint,
-            null_ls.builtins.completion.spell,
-            --null_ls.builtins.formatting.stylua,
-            null_ls.builtins.formatting.beautysh,
-            null_ls.builtins.formatting.black, -- python
-            --null_ls.builtins.formatting.shfmt, -- bash
-            null_ls.builtins.formatting.gofmt, -- golang
-            null_ls.builtins.formatting.json_tool,
-            null_ls.builtins.hover.dictionary,
-            null_ls.builtins.hover.printenv,
-        },
-    })
+    -- null_ls.setup({
+    --     sources = {
+    --         null_ls.builtins.code_actions.refactoring,
+    --         --null_ls.builtins.code_actions.shellcheck,
+    --         --null_ls.builtins.diagnostics.checkmake,
+    --         --null_ls.builtins.diagnostics.commitlint,
+    --         --null_ls.builtins.diagnostics.flake8,
+    --         null_ls.builtins.diagnostics.golangci_lint,
+    --         null_ls.builtins.completion.spell,
+    --         --null_ls.builtins.formatting.stylua,
+    --         null_ls.builtins.formatting.beautysh,
+    --         null_ls.builtins.formatting.black, -- python
+    --         --null_ls.builtins.formatting.shfmt, -- bash
+    --         null_ls.builtins.formatting.gofmt, -- golang
+    --         null_ls.builtins.formatting.json_tool,
+    --         null_ls.builtins.hover.dictionary,
+    --         null_ls.builtins.hover.printenv,
+    --     },
+    -- })
 end
 
 return M

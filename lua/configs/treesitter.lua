@@ -3,9 +3,9 @@ function M.config()
 	-- nvim-treesitter config
 	require 'nvim-treesitter.configs'.setup {
 		-- ensure_installed = "maintained", -- for installing all maintained parsers
-		ensure_installed = { "c", "cpp", "lua", "python", "go", "gomod", "query", "git_config", "gitcommit", "markdown", "json", "yaml", "bash" }, -- for installing specific parsers
+		ensure_installed = {}, -- disable automatic parser installation
 		sync_install = false, -- install synchronously
-        auto_install = true,
+        auto_install = false,
 		ignore_install = {}, -- parsers to not install
 		highlight = {
             enable = true,
