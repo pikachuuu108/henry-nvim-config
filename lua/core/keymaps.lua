@@ -140,7 +140,19 @@ vim.keymap.set('n', 'gd', function()
             vim.api.nvim_echo({{'No definition found', 'WarningMsg'}}, false, {})
         elseif #unique_results == 1 then
             -- Jump directly to the single unique result
-            vim.lsp.util.jump_to_location(unique_results[1], 'utf-8')
+            local location = unique_results[1]
+            local uri = location.uri or location.targetUri
+            local range = location.range or location.targetRange
+            if uri and range then
+                local bufnr = vim.uri_to_bufnr(uri)
+                if not vim.api.nvim_buf_is_loaded(bufnr) then
+                    vim.api.nvim_buf_load(bufnr)
+                end
+                vim.api.nvim_win_set_buf(0, bufnr)
+                local line = range.start.line + 1
+                local col = range.start.character + 1
+                vim.api.nvim_win_set_cursor(0, {line, col})
+            end
         else
             -- Show selection for multiple unique results
             vim.lsp.handlers['textDocument/definition'](nil, unique_results, ctx)
