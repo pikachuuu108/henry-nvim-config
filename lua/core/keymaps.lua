@@ -145,8 +145,9 @@ vim.keymap.set('n', 'gd', function()
             local range = location.range or location.targetRange
             if uri and range then
                 local bufnr = vim.uri_to_bufnr(uri)
+                -- Load the buffer if it's not already loaded
                 if not vim.api.nvim_buf_is_loaded(bufnr) then
-                    vim.api.nvim_buf_load(bufnr)
+                    vim.fn.bufload(bufnr)
                 end
                 vim.api.nvim_win_set_buf(0, bufnr)
                 local line = range.start.line + 1
