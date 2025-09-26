@@ -20,6 +20,8 @@ vim.opt.softtabstop = 4
 vim.opt.expandtab   = true
 
 vim.g.ale_disable_lsp = 1
+vim.g.ale_use_language_server = 0
+vim.g.ale_lsp_root = 'none'
 
 require("core.keymaps")
 

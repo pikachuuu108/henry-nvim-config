@@ -131,6 +131,9 @@ let g:NERDTreeLimitedSyntax = 1
 " ================================= ale ================================
 let b:ale_fixers = {'cpp': ['astyle']}
 
+" ================================= vim-go ================================
+" Disable vim-go's default gd mapping to prevent conflicts with LSP
+let g:go_def_mapping_enabled = 0
 
 " ================================= rainbow ================================
 let g:rainbow_active = 1

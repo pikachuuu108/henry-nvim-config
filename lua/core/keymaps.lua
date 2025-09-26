@@ -86,6 +86,71 @@ vim.keymap.set('n', '<f4>', ':SymbolsOutline<cr>')
 
 vim.keymap.set('n', '<leader>gD', vim.lsp.buf.declaration)
 vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition)
+-- Custom gd handler with deduplication to eliminate duplicate prompts
+vim.keymap.set('n', 'gd', function()
+    -- Use the built-in make_position_params but without the second parameter that caused the error
+    local params = vim.lsp.util.make_position_params()
+    
+    -- Table to store unique definition locations
+    local unique_locations = {}
+    local unique_results = {}
+    
+    -- Send the request to all attached LSP servers
+    vim.lsp.buf_request(0, 'textDocument/definition', params, function(err, result, ctx, config)
+        if err then
+            vim.api.nvim_err_writeln("LSP Error: " .. tostring(err))
+            return
+        end
+
+        if not result or vim.tbl_isempty(result) then
+            vim.api.nvim_echo({{'No definition found', 'WarningMsg'}}, false, {})
+            return
+        end
+
+        -- Normalize result to table format if needed
+        if type(result) == 'table' and result[1] == nil and (result.uri or result.targetUri) then
+            result = {result}
+        end
+
+        if type(result) == 'table' then
+            for _, location in ipairs(result) do
+                if location then
+                    -- Get URI and range for this location
+                    local uri = location.uri or location.targetUri
+                    local range = location.range or location.targetRange
+                    
+                    if uri and range then
+                        -- Create a unique key based on URI and position
+                        local position_key = uri .. "#" .. 
+                            range.start.line .. "," .. 
+                            range.start.character
+                        
+                        -- Only add this location if we haven't seen it before
+                        if not unique_locations[position_key] then
+                            unique_locations[position_key] = true
+                            table.insert(unique_results, location)
+                        end
+                    end
+                end
+            end
+        end
+
+        -- Now handle the unique results
+        if #unique_results == 0 then
+            vim.api.nvim_echo({{'No definition found', 'WarningMsg'}}, false, {})
+        elseif #unique_results == 1 then
+            -- Jump directly to the single unique result
+            vim.lsp.util.jump_to_location(unique_results[1], 'utf-8')
+        else
+            -- Show selection for multiple unique results
+            vim.lsp.handlers['textDocument/definition'](nil, unique_results, ctx)
+        end
+    end)
+end, { desc = 'LSP: Go to Definition (deduplicated)' })
+vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
+vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
+vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition)
+vim.keymap.set('n', 'gr', vim.lsp.buf.references)
 vim.keymap.set('n', '<leader>gt', vim.lsp.buf.type_definition)
 vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation)
 vim.keymap.set('n', '<leader>gp', vim.diagnostic.goto_prev)
